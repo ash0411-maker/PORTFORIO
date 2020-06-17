@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'home/top'
+    resources :cities, only: %i[index create edit update destroy]
+    resources :genres, only: %i[index create edit update destroy]
   end
 
 end
