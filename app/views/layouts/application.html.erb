@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <div class = "wrapper">
+      <header>
+        <nav>
+      <!----- FANTRAロゴ ----->
+          <% if admin_signed_in? %>
+            <%= link_to "FANTRA", admin_home_top_path, class: "logo" %>
+          <% end %>
+
+
+      <!----- 管理者ログイン時 ----->
+          <% if admin_signed_in? %>
+            <ul>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              </li>
+            </ul>
+      <!----- 管理者ログイン時 ----->
+          <% end %>
+        </nav>
+      </header>
     <%= yield %>
   </body>
 </html>
