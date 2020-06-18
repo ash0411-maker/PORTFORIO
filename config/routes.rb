@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :home do
+    get 'tours/show'
+    get 'tours/index'
+  end
   devise_for :admins, controllers: {
     sessions: 'devise/admins/sessions',
     passwords: 'devise/admins/passwords',
